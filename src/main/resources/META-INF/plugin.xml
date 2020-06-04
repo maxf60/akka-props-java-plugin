@@ -1,0 +1,31 @@
+<idea-plugin>
+    <id>com.max.gc.akka-props-java-plugin</id>
+    <name>Akka Props Java</name>
+    <vendor email="max_gc@mail.ru" url="https://github.com/maxf60">Maksim Fedorov</vendor>
+    <version>1.0.0</version>
+
+    <description>
+        <![CDATA[
+            Adds a Props action to the Generate menu which generates
+            public static Props props() method based on actor's constructor.
+        ]]>
+    </description>
+
+    <change-notes><![CDATA[
+      04.06.2020 - 1.0.0 - First release.<br/>
+      ]]>
+    </change-notes>
+
+    <idea-version since-build="181.2784.17"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <actions>
+        <action id="com.max.gc.plugins.akkapropsjava.AkkaPropsJavaAction"
+                class="com.max.gc.plugins.akkapropsjava.AkkaPropsJavaAction" text="Props"
+                description="Generate static props() method based on constructor">
+            <add-to-group group-id="GenerateGroup" anchor="after" relative-to-action="JavaGenerateGroup2"/>
+        </action>
+    </actions>
+</idea-plugin>
